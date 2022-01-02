@@ -6,6 +6,8 @@ Future Tools for production: Nginx, Gunicorn
 
 You should see the website at http://localhost:8000
 
+To initialize your environment follow the directions below:
+
 # Env file
 Paste the following into ./club-website/.env.dev
 ```
@@ -29,16 +31,13 @@ To (re)build and run the containers:
 ```console
 # In the ./club-website directory
 $ docker-compose up -d --build
-```
 
-To run the containers:
-```console
-# In the ./club-website directory
+# To just run the containers, use:
 $ docker-compose up -d
 ```
 
 Notes:
-The first you build the docker containers may take a long time
+ - The first you build the docker containers may take a long time
 
 To stop the containers:
 ```console
@@ -46,3 +45,19 @@ To stop the containers:
 $ docker-compose stop
 ```
 
+# Managing data for database
+Since we are not using a centralized database, it is going to be tedious...
+
+Note that all of the data for the database is located in the datadump directory. Only push the changes this tar file if you modified the contents of the database and you want everyone else to see your modifications.
+
+To manage the data:
+```console
+# In the ./club-website directory
+$ bash ./scripts/data.sh
+```
+Enter "load" if you want to initialize your database and "save" if you want the contents of the database to be saved.
+
+Notes:
+ - Only load/save if you have stopped the docker containers.
+
+Contact @sidlak-c137 for help with any of these steps :) There may be steps that I missed!
