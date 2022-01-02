@@ -8,7 +8,7 @@ You should see the website at http://localhost:8000
 
 To initialize your environment follow the directions below:
 
-# Env file
+## Env file
 Paste the following into ./club-website/.env.dev
 ```
 DEBUG=1
@@ -24,7 +24,7 @@ DATABASE=postgres
 ```
 The production env will have a completely different (SECRET) env file :)
 
-# How to Docker
+## How to Docker
 Verify you have docker and python installed.
 
 To (re)build and run the containers:
@@ -45,7 +45,7 @@ To stop the containers:
 $ docker-compose stop
 ```
 
-# Managing data for database
+## Managing data for database
 Since we are not using a centralized database, it is going to be tedious...
 
 Note that all of the data for the database is located in the datadump directory. Only push the changes this tar file if you modified the contents of the database and you want everyone else to see your modifications.
